@@ -22,10 +22,10 @@ function cardsTemplate() {
     </p>
     <img class="flag">
     <p class="country"></p>
-    <p>Cities Name:
+    <p class="cities-name">
     <ul class="cities-list"></ul>
     </p>
-    <p>Population:</p>`;
+    <p class="population"></p>`;
     document.querySelector('.main-cards').innerHTML=mainCards;
        
 }
@@ -104,7 +104,7 @@ function getCities(data, name)
 
     let h2=document.querySelector('.country');
     h2.innerHTML="Country Name: "+countryName;
-
+    document.querySelector('.cities-name').innerHTML="Cities Name:";
     let ul=document.querySelector(".cities-list");
     allData.forEach(element => {
         let li=document.createElement("li");
