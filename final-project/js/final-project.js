@@ -15,13 +15,16 @@ const url2= "https://search.worldbank.org/api/v2/wds?format=json";
 // inserting html template 
 function cardsTemplate() {
     const mainCards= `
-    <label for="search">Enter Country</label>
-    <input id="search" type="Text">
+    <p class= "input-btn">
+    <label for="search">Enter Country
+    <input id="search" type="Text" placeholder="us | usa | united states" pattern="[aA-zZ]{2,}"></label>
     <button id="btn" onclick="retrieve()">Get Data</button>
+    </p>
     <img class="flag">
-    <h2 class="country"></h2>
-    <p>Cities Name:</p>
+    <p class="country"></p>
+    <p>Cities Name:
     <ul class="cities-list"></ul>
+    </p>
     <p>Population:</p>`;
     document.querySelector('.main-cards').innerHTML=mainCards;
        
@@ -31,9 +34,20 @@ cardsTemplate();
 
 let cName;
 function retrieve() {
-    let search=document.getElementById('search').value;
-    cName=titleCase(search);
     
+    let search=document.getElementById('search').value;
+    let input=document.getElementById('search');
+    if (!input.checkValidity()) {
+       alert(input.validationMessage);
+       return;
+    }
+    cName=titleCase(search);
+
+    if (cName.length<4) {
+        cName=cName.toUpperCase();
+
+        console.log(cName.length);
+    }
     getData(url, cName);
     getFlag(countryFlag, cName);
     console.log(cName);
@@ -80,7 +94,7 @@ function getCities(data, name)
     let allData; //= data[1].cities;
 
     data.forEach(item => {
-        if (item.country==countryName) {
+        if (item.country==countryName || item.iso2==countryName || item.iso3==countryName) {
         allData=item.cities;
         countryName=item.country;
         //console.log(item.country); 
@@ -112,7 +126,7 @@ function setFlag(data, name) {
     let countryName=name;
     let path;
     data.data.forEach(item => {
-        if (item.name==countryName) {
+        if (item.name==countryName || item.iso2==countryName || item.iso3==countryName) {
         path=item.flag;
         //console.log(item.flag); 
         }    
@@ -123,7 +137,8 @@ function setFlag(data, name) {
 }
 
 //titleCase("united arab emirates");
-
-
+function msg(event){
+    event.target.setCustomValidity('Username should only contain lowercase letters. e.g. john');
+}
 
 
