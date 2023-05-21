@@ -29,3 +29,8 @@ header{
     grid-row: 2/3;
     place-self: center;
 }
+.cities-name{
+    grid-column: 1/3;
+    grid-row: 3/4;
+    max-height: 300px;
+}

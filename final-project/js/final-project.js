@@ -17,7 +17,7 @@ function cardsTemplate() {
     const mainCards= `
     <p class= "input-btn">
     <label for="search">Enter Country
-    <input id="search" type="Text" placeholder="us | usa | united states" pattern="[aA-zZ]{2,}"></label>
+    <input id="search" type="Text" placeholder="us | usa | united states" pattern="[aA-zZ ]{2,}"></label>
     <button id="btn" onclick="retrieve()">Get Data</button>
     </p>
     <img class="flag">
