@@ -68,4 +68,18 @@ h4{
 .country-card, .int-card, .local-card{
     padding-left: 5px;
 }
+.ulist{
+    max-width: 400px;
+    display: flex;
+    flex-direction: row;
+padding-left: -30px;
+}
+li{
+    list-style: none;
+    
+}
+ul{
+    display: block;
+    padding-left: 10px;
+}
 
