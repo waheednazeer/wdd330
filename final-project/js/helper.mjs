@@ -1,5 +1,15 @@
-import { countryCardTemplate, countryTemplate, internationalCardTemplate } from "./htmltemplates.mjs";
+import { countryCardTemplate, countryTemplate, internationalCardTemplate, listTemplate, worldBankDataTemplate } from "./htmltemplates.mjs";
 
+export async function fetchWorldBankApi(api, key) {
+    try {
+        const response = await fetch(api);
+        const data = await response.json();
+        setToLs(key, data);
+        } catch (error) {
+        console.error(error);
+    }
+    
+}
 export async function fetchApi(url, options, key){
     try {
         const response = await fetch(url, options);
@@ -41,21 +51,23 @@ export function titleCase(word) {
   return a;  
 }
 
-export function getCountryData(data, name)
+export function getCountryData(data, name, wbdata)
 {
     let countryName=name;
     let path;
     let countryData;
     let intData;
-
+    let cca2;
+    
     data.forEach(item => {
         if (item.name.common==countryName || item.cca2==countryName || item.cca3==countryName) {
         //allData=item.cities;
         countryName=item.name.common;
         path=item.flag;
-        countryData=[item.name.official, item.capital, item.cca2, item.cca3, item.area, item.population];
-        intData=[item.callingCodes, item.region, item.subregion, item.borders];
-        //console.log(item.country); 
+        cca2=item.cca2;
+        countryData=[item.name.official, item.capital, item.cca2, item.cca3, item.area, item.population, Object.values(item.languages)];
+        intData=[item.callingCodes[0], item.region, item.subregion, item.borders];
+        console.log(item.currencies); 
         
         }    
     });
@@ -66,18 +78,126 @@ export function getCountryData(data, name)
     h2.innerHTML="Country Name: "+countryName;
 
     countryCardTemplate();
+    
     countryTemplate(countryData);
     internationalCardTemplate(intData);
+    listTemplate();
+    borderList(data, cca2);
+// world bank api data collection
+let wbank=[];
+wbdata.forEach(wb => {
+    if (wb.country.id==countryName || wb.country.value==countryName || wb.country.countryiso3code==countryName) {
+
+    //console.log(wb.country.id+": "+ wb.inflation.toFixed(2)+"%"); population_growth
+    if (wb.value==null) {
+        wb.value='--';
+        wbank[0]=wb.value; 
+    }else{
+        wbank[0]=(wb.value/1000000000).toFixed(2); 
+    }
+
+    if (wb.inflation==null) {
+        wb.inflation='--';
+        wbank[1]=wb.inflation; 
+    }else{
+        wbank[1]=wb.inflation.toFixed(2); 
+    }
+    if (wb.education==null) {
+        wb.education='--';
+        wbank[2]=wb.education; 
+    }else{
+        wbank[2]=wb.education.toFixed(2); 
+    }
+
+    if (wb.population_growth==null) {
+        wb.population_growth='--';
+        wbank[3]=wb.population_growth; 
+    }else{
+        wbank[3]=wb.population_growth.toFixed(2); 
+    }
+    if (wb.electricity==null) {
+        wb.electricity='--';
+        wbank[4]=wb.electricity; 
+    }else{
+        wbank[4]=wb.electricity.toFixed(2); 
+    }
+
+    if (wb.forest_area==null) {
+        wb.forest_area='--';
+        wbank[5]=wb.forest_area; 
+    }else{
+        wbank[5]=wb.forest_area.toFixed(2); 
+    }
     
-    //document.querySelector('.cities-name').innerHTML="Cities Name:";
-    //let ul=document.querySelector(".cities-list");
-    //allData.forEach(element => {
-        //let li=document.createElement("li");
-        //li.appendChild(document.createTextNode(element));
-        //ul.appendChild(li);
-        //console.log(element);
-        
-    //});
+    
+    }    
+});
+console.log(wbank);
+worldBankDataTemplate(wbank);
     
 }
 // end of function
+
+export function borderList(lsApi, cca2){
+    let ul=document.querySelector(".ul-1");
+    let ul2=document.querySelector(".ul-2");
+    let ul3=document.querySelector(".ul-3");
+    let ul4=document.querySelector(".ul-4");
+    let ul5=document.querySelector(".ul-5");
+
+lsApi.forEach(name => {
+
+    if (name.cca2 == cca2) {
+        //let limit=name.borders.length;
+        let counter=0;
+        //console.log(limit/3);
+        name.borders.forEach(border => {
+            lsApi.forEach(name => {
+                if (name.cca3== border) {
+                    if (counter < 3) {
+                        
+                        let li=document.createElement("li");
+                        li.appendChild(document.createTextNode(name.name.common));
+                        ul.appendChild(li);
+                        counter++;
+                        
+                    }
+                    else if (counter >=3 && counter < 6) {
+                        
+                        let li=document.createElement("li");
+                        li.appendChild(document.createTextNode(name.name.common));
+                        ul2.appendChild(li);
+                        counter++;
+                    }
+                    else if (counter >=6 && counter < 9) {
+                        
+                        let li=document.createElement("li");
+                        li.appendChild(document.createTextNode(name.name.common));
+                        ul3.appendChild(li);
+                        counter++;
+                    }
+                    else if (counter >=9 && counter < 12) {
+                        
+                        let li=document.createElement("li");
+                        li.appendChild(document.createTextNode(name.name.common));
+                        ul4.appendChild(li);
+                        counter++;
+                    }
+                    else if (counter >=12 && counter < 15) {
+                        
+                        let li=document.createElement("li");
+                        li.appendChild(document.createTextNode(name.name.common));
+                        ul5.appendChild(li);
+                        counter++;
+                    }
+
+                    //console.log(counter);
+
+                    
+                }
+            });
+           
+        });
+    }   
+});
+}

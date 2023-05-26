@@ -4,7 +4,7 @@ let cName;
 export function retrieve() {
        
     let search=document.getElementById('search').value;
-    console.log("retrieve funtion call "+search);
+    //console.log("retrieve funtion call "+search);
     let input=document.getElementById('search');
     if (!input.checkValidity()) {
        alert(input.validationMessage);
@@ -16,8 +16,9 @@ export function retrieve() {
         cName=cName.toUpperCase();
     }
     localStorage.setItem("countryKey", cName);
+    let wbLsApi=getFromLs('wbKey');
     let jsonLsApi=getFromLs('apiKey');
-    getCountryData(jsonLsApi, cName);
+    getCountryData(jsonLsApi, cName, wbLsApi);
 
-    console.log(cName);   
+    //console.log(cName);   
 }
