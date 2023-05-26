@@ -48,10 +48,10 @@ hr{
   width: 29.4%;
   height: auto;
   transition: width 2s;
-  border: 5px solid black;
 }
 .flag:hover{
-    width: 100%;
+  width: 100%;
+  border: 5px solid black;
     
 }
 #search:invalid{
