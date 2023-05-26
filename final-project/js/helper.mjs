@@ -67,7 +67,7 @@ export function getCountryData(data, name, wbdata)
         cca2=item.cca2;
         countryData=[item.name.official, item.capital, item.cca2, item.cca3, item.area, item.population, Object.values(item.languages)];
         intData=[item.callingCodes[0], item.region, item.subregion, item.borders];
-        console.log(item.currencies); 
+        //console.log(item.currencies); 
         
         }    
     });
@@ -132,7 +132,7 @@ wbdata.forEach(wb => {
     
     }    
 });
-console.log(wbank);
+//console.log(wbank);
 worldBankDataTemplate(wbank);
     
 }
