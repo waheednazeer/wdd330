@@ -2,7 +2,7 @@ import {getFromLs, fetchApi, fetchWorldBankApi } from "./helper.mjs";
 import { mainTemplate } from "./htmltemplates.mjs";
 import { retrieve } from "./eventsHandlers.mjs";
 
-let wbApi="/jsonApi/wbApi.json"; // I have compiled more than 8 world bank API to get data from one API store in my pc.
+let wbApi="../final-project/json/wbApi.json"; // I have compiled more than 8 world bank API to get data from one API store in my pc.
 const url = 'https://country-facts.p.rapidapi.com/all';
 const options = {
 	method: 'GET',
