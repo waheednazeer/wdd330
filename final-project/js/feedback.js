@@ -11,7 +11,7 @@ Email.send({
     "Subject : Feedback from "+document.getElementById('fname').value
     +"<br>Name: "+document.getElementById('fname').value 
     +"<br>Email: "+ document.getElementById('emailid').value
-    +"<br>Message: "+ document.getElementById('message').value
+    +"<br>Message: <br>"+ document.getElementById('message').value
     +"<br>"+"<br>"+"<br>"+"<br>"
     +"<br>"+"<br>"+"<br>"+"<br>"
             
