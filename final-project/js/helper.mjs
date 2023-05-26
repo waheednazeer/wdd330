@@ -201,3 +201,12 @@ lsApi.forEach(name => {
     }   
 });
 }
+
+export function help() {
+    let msg="Please follow below rules,"
+            +"\n1: Country Name can be two letters,"
+            +"\n2: Three letters or full name including space if any."
+            +"\n3: Capital/ Small/ Title case allowed";
+    alert(msg);
+    
+}

@@ -1,4 +1,4 @@
-import {getFromLs, fetchApi, fetchWorldBankApi } from "./helper.mjs";
+import {getFromLs, fetchApi, fetchWorldBankApi, help } from "./helper.mjs";
 import { mainTemplate } from "./htmltemplates.mjs";
 import { retrieve } from "./eventsHandlers.mjs";
 
@@ -18,6 +18,7 @@ const options = {
 mainTemplate();
 
 document.querySelector('#btn').addEventListener('click', retrieve);
+document.querySelector('.help').addEventListener('click', help);
 
 
 
