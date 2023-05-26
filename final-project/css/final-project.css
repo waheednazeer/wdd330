@@ -64,8 +64,9 @@ hr{
     
 }
 .input-btn{
-    grid-column: 1/2;
-    grid-row: 1/2;
+  height: 40px;
+  grid-column: 1/2;
+  grid-row: 1/2;
 }
 .country{
     grid-column: 2/3;
@@ -190,5 +191,4 @@ textarea{
 }
 #sub-btn{
   margin: 25px;
-  height: 40px;
 }
