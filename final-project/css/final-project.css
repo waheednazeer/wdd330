@@ -189,5 +189,6 @@ textarea{
     width: 50%;
 }
 #sub-btn{
-    margin: 25px;
+  margin: 25px;
+  height: 40px;
 }
