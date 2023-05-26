@@ -159,20 +159,7 @@ ul{
   }
 }
 
-footer {
-    background: black;
-    color: white;
-    margin-top: 30px;
-    text-align: center;
-    padding: 5px;
-    font-size: 15px; 
-  }
-
-  .feedbackForm{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
+ 
   input{
     width: 250px;
     height: 40px;
@@ -192,11 +179,53 @@ footer {
 
   label{
     margin-top: 10px;
-    margin-left: 30px;
+    
   }
-textarea{
-    width: 50%;
+
+.form-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  padding: 2vw;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+#fname, #emailid, textarea{
+  width: 95%;
+  border: 0;
+  margin: 10px 0;
+  padding: 10px;
+  outline: none;
+  font-size: 16px;
+}
+fieldset{
+  border-radius: 10px;
 }
 #sub-btn{
-  margin: 25px;
+border-radius: 30px;
+ width: 200px;
+ border: 0;
+ outline: none;
+ place-self: center;
+ padding: 10px;
+ margin: 10px auto 0;
+ background-color: red;
+ color: white;
+ font-size: 18px;
+ cursor: pointer;
+}
+footer {
+  background: black;
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+  padding: 5px;
+  font-size: 16px; 
 }
