@@ -63,8 +63,13 @@ hr{
     grid-template-columns: 1fr 1fr;
     
 }
+#btn{
+  width: 120px;
+  height: 46px;
+  background-color: blue;
+  margin-left: 10px;
+}
 .input-btn{
-  height: 40px;
   grid-column: 1/2;
   grid-row: 1/2;
 }
