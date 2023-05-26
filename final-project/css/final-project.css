@@ -159,3 +159,35 @@ footer {
     padding: 5px;
     font-size: 15px; 
   }
+
+  .feedbackForm{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  input{
+    width: 250px;
+    height: 40px;
+  }
+  #fname:invalid{
+    border-left: 7px solid red;
+  }
+  #fname:valid{
+    border-left: 7px solid green;
+  }
+  #emailid:invalid{
+    border-left: 7px solid red;
+  }
+  #emailid:valid{
+    border-left: 7px solid green;
+  }
+
+  label{
+    margin-top: 10px;
+  }
+textarea{
+    width: 50%;
+}
+#sub-btn{
+    margin: 25px;
+}

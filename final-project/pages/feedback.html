@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/getDates.js" defer></script>
+    <script src="https://smtpjs.com/v3/smtp.js" defer></script>
+    <script src="../js/feedback.js" defer></script>
+    <link rel="stylesheet" href="../css/final-project.css">
+    <title>Feedback</title>
+</head>
+<body>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../pages/feedback.html">Feedback</a>
+        <a href="#">Help</a>
+    </nav>
+    <header> <h1 class="header-h1">World Countries Biography Application</h1></header>
+    <main>
+        <div class="form-container">
+        <form onsubmit="sendMessage(); reset(); return false;">
+            <fieldset class="feedbackForm">
+                <legend>Feedback About The Application</legend>
+                <label for="fname">Full Name:*</label>
+                <input id="fname" type="text" pattern="[A-Z]+[a-z\s]+[A-Z]+[a-z]{2,}" required placeholder="Joe Smith">
+                <label for="emailid">Email Id:*</label>
+                <input type="email" id="emailid" required pattern="^[^@+\s]+@[^@\s]+\.[^@\s]+$" placeholder="abc@domain.com">
+                <label for="feed">Feedback:*</label>
+                <textarea name="feed" id="message" rows="10" required placeholder="Type your feedback here"></textarea>
+            </fieldset>
+            <button id="sub-btn" type="submit">Submit Feedback</button>
+        </form>
+    </div>
+    </main>
+    <footer>
+        <p>
+            &copy;<span id="currentyear"></span> - Waheed Nazir - Pakistan |
+            Last Modified: <span id="lastmodified"> </span>
+        </p>
+    </footer>
+</body>
+</html>
