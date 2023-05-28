@@ -58,6 +58,7 @@ export function getCountryData(data, name, wbdata)
     let countryData;
     let intData;
     let cca2;
+    let cca3
     
     data.forEach(item => {
         if (item.name.common==countryName || item.cca2==countryName || item.cca3==countryName) {
@@ -65,6 +66,7 @@ export function getCountryData(data, name, wbdata)
         countryName=item.name.common;
         path=item.flag;
         cca2=item.cca2;
+        cca3=item.cca3;
         countryData=[item.name.official, item.capital, item.cca2, item.cca3, item.area, item.population, Object.values(item.languages)];
         intData=[item.callingCodes[0], item.region, item.subregion, item.borders];
         //console.log(item.currencies); 
@@ -74,8 +76,8 @@ export function getCountryData(data, name, wbdata)
     let img=document.querySelector('.flag');
     img.setAttribute("src", path);
 
-    let h2=document.querySelector('.country');
-    h2.innerHTML="Country Name: "+countryName;
+    //let h2=document.querySelector('.country');
+    //h2.innerHTML="Country Name: "+countryName;
 
     countryCardTemplate();
     
@@ -84,10 +86,12 @@ export function getCountryData(data, name, wbdata)
     listTemplate();
     borderList(data, cca2);
 // world bank api data collection
+
 let wbank=[];
 wbdata.forEach(wb => {
-    if (wb.country.id==countryName || wb.country.value==countryName || wb.country.countryiso3code==countryName) {
-
+    
+    if (wb.country.id==cca2 || wb.country.countryiso3code==cca3) {
+        
     //console.log(wb.country.id+": "+ wb.inflation.toFixed(2)+"%"); population_growth
     if (wb.value==null) {
         wb.value='--';
@@ -202,11 +206,3 @@ lsApi.forEach(name => {
 });
 }
 
-export function help() {
-    let msg="Please follow below rules,"
-            +"\n1: Country Name can be two letters,"
-            +"\n2: Three letters or full name including space if any."
-            +"\n3: Capital/ Small/ Title case allowed";
-    alert(msg);
-    
-}

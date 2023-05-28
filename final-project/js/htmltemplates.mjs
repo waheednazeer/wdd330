@@ -5,7 +5,7 @@ export function mainTemplate() {
     <img class="flag">
     <p class="country"></p>
     <p class= "input-btn">
-    <label for="search">Enter Country
+    <label for="search">Enter Country Name: 
     <input id="search" type="Text" placeholder="us | usa | united states" pattern="[aA-zZ ]{2,}"></label>
     <button id="btn">Get Data</button>
     </p>
