@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+:root{
+  --bord-color:rgb(137, 133, 133);
+}
 body {
     font-family: 'Lato', sans-serif, serif;
     font-weight: 200;
@@ -70,7 +73,7 @@ hr{
     height:5px;
     width: 100%;
     border-width:0;
-    background-color: black;
+    background-color: var(--bord-color);
     margin: 0;
 }
 
@@ -81,7 +84,7 @@ hr{
 }
 .flag:hover{
   width: 100%;
-  border: 5px solid black;
+  border: 5px solid var(--bord-color);
     
 }
 
@@ -125,22 +128,22 @@ hr{
 .country-card{
     grid-column: 1/2;
     grid-row: 1/2;
-    border: 5px solid black;
-    box-shadow: 12px 12px 2px 1px rgb(137, 133, 133);
+    border: 5px solid var(--bord-color);
+    box-shadow: 12px 12px 2px 1px var(--bord-color);
 
 }
 .int-card{
     grid-column: 2/3;
     grid-row: 1/2;
-    border: 5px solid black;
-    box-shadow: 12px 12px 2px 1px rgb(137, 133, 133);
+    border: 5px solid var(--bord-color);
+    box-shadow: 12px 12px 2px 1px var(--bord-color);
 
 }
 .wb-card{
     grid-column: 3/4;
     grid-row: 1/2;
-    border: 5px solid black;
-    box-shadow: 12px 12px 2px 1px rgb(137, 133, 133);
+    border: 5px solid var(--bord-color);
+    box-shadow: 12px 12px 2px 1px var(--bord-color);
 
 }
 .country-card, .int-card, .wb-card{
