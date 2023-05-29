@@ -59,10 +59,10 @@ export function getCountryData(data, name, wbdata)
     let intData;
     let cca2;
     let cca3
+    let checked=true;
     
     data.forEach(item => {
         if (item.name.common==countryName || item.cca2==countryName || item.cca3==countryName) {
-        //allData=item.cities;
         countryName=item.name.common;
         path=item.flag;
         cca2=item.cca2;
@@ -70,75 +70,25 @@ export function getCountryData(data, name, wbdata)
         countryData=[item.name.official, item.capital, item.cca2, item.cca3, item.area, item.population, Object.values(item.languages)];
         intData=[item.callingCodes[0], item.region, item.subregion, item.borders];
         //console.log(item.currencies); 
-        
-        }    
+        checked=false;
+        } 
     });
+    if (checked) {
+        alert("Please check your country name!");
+        return;
+    } 
     let img=document.querySelector('.flag');
     img.setAttribute("src", path);
 
     //let h2=document.querySelector('.country');
     //h2.innerHTML="Country Name: "+countryName;
-
     countryCardTemplate();
-    
     countryTemplate(countryData);
     internationalCardTemplate(intData);
     listTemplate();
     borderList(data, cca2);
-// world bank api data collection
-
-let wbank=[];
-wbdata.forEach(wb => {
-    
-    if (wb.country.id==cca2 || wb.country.countryiso3code==cca3) {
-        
-    //console.log(wb.country.id+": "+ wb.inflation.toFixed(2)+"%"); population_growth
-    if (wb.value==null) {
-        wb.value='--';
-        wbank[0]=wb.value; 
-    }else{
-        wbank[0]=(wb.value/1000000000).toFixed(2); 
-    }
-
-    if (wb.inflation==null) {
-        wb.inflation='--';
-        wbank[1]=wb.inflation; 
-    }else{
-        wbank[1]=wb.inflation.toFixed(2); 
-    }
-    if (wb.education==null) {
-        wb.education='--';
-        wbank[2]=wb.education; 
-    }else{
-        wbank[2]=wb.education.toFixed(2); 
-    }
-
-    if (wb.population_growth==null) {
-        wb.population_growth='--';
-        wbank[3]=wb.population_growth; 
-    }else{
-        wbank[3]=wb.population_growth.toFixed(2); 
-    }
-    if (wb.electricity==null) {
-        wb.electricity='--';
-        wbank[4]=wb.electricity; 
-    }else{
-        wbank[4]=wb.electricity.toFixed(2); 
-    }
-
-    if (wb.forest_area==null) {
-        wb.forest_area='--';
-        wbank[5]=wb.forest_area; 
-    }else{
-        wbank[5]=wb.forest_area.toFixed(2); 
-    }
-    
-    
-    }    
-});
-//console.log(wbank);
-worldBankDataTemplate(wbank);
-    
+    // world bank api data collection
+    worldBankDataTemplate(getWorldBankData(wbdata, cca2, cca3));   
 }
 // end of function
 
@@ -206,3 +156,54 @@ lsApi.forEach(name => {
 });
 }
 
+function getWorldBankData(wbdata, cca2, cca3) {
+
+let wbank=[];
+wbdata.forEach(wb => {
+    
+    if (wb.country.id==cca2 || wb.country.countryiso3code==cca3) {
+        
+    //console.log(wb.country.id+": "+ wb.inflation.toFixed(2)+"%"); population_growth
+    if (wb.value==null) {
+        wb.value='--';
+        wbank[0]=wb.value; 
+    }else{
+        wbank[0]=(wb.value/1000000000).toFixed(2); 
+    }
+
+    if (wb.inflation==null) {
+        wb.inflation='--';
+        wbank[1]=wb.inflation; 
+    }else{
+        wbank[1]=wb.inflation.toFixed(2); 
+    }
+    if (wb.education==null) {
+        wb.education='--';
+        wbank[2]=wb.education; 
+    }else{
+        wbank[2]=wb.education.toFixed(2); 
+    }
+
+    if (wb.population_growth==null) {
+        wb.population_growth='--';
+        wbank[3]=wb.population_growth; 
+    }else{
+        wbank[3]=wb.population_growth.toFixed(2); 
+    }
+    if (wb.electricity==null) {
+        wb.electricity='--';
+        wbank[4]=wb.electricity; 
+    }else{
+        wbank[4]=wb.electricity.toFixed(2); 
+    }
+
+    if (wb.forest_area==null) {
+        wb.forest_area='--';
+        wbank[5]=wb.forest_area; 
+    }else{
+        wbank[5]=wb.forest_area.toFixed(2); 
+    } 
+    }    
+});
+   return wbank; 
+}
