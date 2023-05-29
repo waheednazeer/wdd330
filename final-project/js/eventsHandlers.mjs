@@ -35,11 +35,9 @@ export default class Help{
     constructor(){
         console.log(" This my class");
         const helpline= `
-        <h4>How to Search Country Name<h4>
-        
+        <h4>How to Enter Country Name<h4>
         <ul>
-        <li>Please enter two or three letters iso2 or iso3 country code.</li>
-        <li>Please enter full name</li>
+        <li>Please enter two or three letters iso2 or iso3 country code,or full name.</li>
         <li>Name can be any format, upper, lower or title case</li>
         </ul>
         

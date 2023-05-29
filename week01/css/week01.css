@@ -1,0 +1,103 @@
+
+header{
+    margin: 0 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+main{
+    margin: 30px;
+}
+
+.container{
+    width: auto;
+    display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 40px;
+    column-gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+.box-1{
+    width: 300px;
+    height: 300px;
+    border: 5px solid pink;
+    background-color: pink;
+    transition: width 2s, height 2s, transform 2s;
+}
+
+.box-2{
+    width: 300px;
+    height: 300px;
+    border: 5px solid red;
+    background-color: red;
+    transition: width 2s, height 2s, transform 2s;
+}
+.box-3{
+    width: 300px;
+    height: 300px;
+    border: 5px solid blue;
+    background-color: blue;
+    transition: width 2s, height 2s, transform 2s;
+}
+.box-4{
+    width: 300px;
+    height: 300px;
+    border: 5px solid green;
+    background-color: green;
+    transition: width 2s, height 2s, transform 2s;
+}
+.box-5{
+    width: 300px;
+    height: 300px;
+    border: 5px solid gray;
+    background-color: gray;
+    transition: width 2s, height 2s, transform 2s;
+}
+.box-6{
+    width: 300px;
+    height: 300px;
+    border: 5px solid burlywood;
+    background-color: burlywood;
+    transition: width 2s, height 2s, transform 2s;
+}
+
+
+  
+  .box-2:hover {
+    width: 500px;
+    height: 500px;
+    transform: rotate(180deg);
+  }
+  .mytext{
+    position: relative;
+    text-align: center;
+    top: 45%;
+    transform: translateY(-50%);
+    color: blue;
+  }
+  .box-1:hover {
+    width: 500px;
+    height: 500px;
+    transform: rotate3d(1, 2, 3, 90deg);
+  }
+  .box-3:hover {
+    
+    transform: translate3d(12px, 50%, 3em);
+  }
+  .box-4:hover {
+    transform: skew(30deg, 20deg);
+    
+  }
+  .box-5:hover {
+
+    transform: translateX(10px) rotate(10deg) 
+  }
+  .box-6:hover {
+
+    transform: scale3d(2, 1, 1);
+  }
+
+ 
+  

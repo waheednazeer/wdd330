@@ -159,7 +159,7 @@ hr{
     list-style: none;
     
 }
-ul{
+.ulist ul{
     display: block;
     padding-left: 0px;
     margin: 0;
@@ -257,11 +257,10 @@ footer {
 /* help.html page style*/
 
 .help-detail ul{
-  list-style:circle;
   text-align: left;
 }
 .help-detail li{
-  list-style-type: style;
+  list-style: circle;
 }
 
 @media (max-width: 500px){
