@@ -97,3 +97,25 @@ export function internationalCardTemplate(intData){
         `;
         document.querySelector('.wb-card').innerHTML=wbank;
     }
+
+    export default class Help{
+    
+        constructor(){
+            this.helpline= `
+            <h4>How to Enter Country Name<h4>
+            <ul>
+            <li>Please enter two or three letters iso2 or iso3 country code,or full name.</li>
+            <li>Name can be any format, upper, lower or title case</li>
+            </ul>
+            <h4>How to Fill Feedback Form<h4>
+            <ul>
+            <li>Full Name must be in Title Case. Must have space between First name and Last name.</li>
+            <li>No digit is allowed in name</li>
+            <li>Email id must be in email format. no space allowed in email id on left side of @ sign.</li>
+            </ul>     
+            `;
+        }   
+            renderHelpTemplate() {
+                document.querySelector('.help-detail').innerHTML= this.helpline;
+            }   
+    }
