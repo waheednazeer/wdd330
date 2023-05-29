@@ -272,12 +272,16 @@ footer {
 #search{
   margin-left: 20px;
   margin-right: 10px;
+  width: 285px;
 }
 .flag{
   width: 87%;
 }
 .header-h1{
   font-size: 30px;
+}
+.input-btn label{
+  margin-left: 20px;
 }
   
   }
