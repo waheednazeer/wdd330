@@ -30,7 +30,7 @@ nav a:hover{
 }
 header{
     text-align: center;
-    background-color: red;
+    background-color: burlywood;
     margin: 0;
     padding: 10px;
 }
@@ -66,8 +66,12 @@ h1{
 
 
 
-h4{
-    text-align: center;
+h3{
+  text-align: center;
+  background-color: burlywood;
+  margin: 0 ;
+  padding: 10px;
+  margin-left: -5px;
 }
 hr{
     height:5px;
@@ -128,21 +132,18 @@ hr{
 .country-card{
     grid-column: 1/2;
     grid-row: 1/2;
-    border: 5px solid var(--bord-color);
     box-shadow: 12px 12px 2px 1px var(--bord-color);
 
 }
 .int-card{
     grid-column: 2/3;
     grid-row: 1/2;
-    border: 5px solid var(--bord-color);
     box-shadow: 12px 12px 2px 1px var(--bord-color);
 
 }
 .wb-card{
     grid-column: 3/4;
     grid-row: 1/2;
-    border: 5px solid var(--bord-color);
     box-shadow: 12px 12px 2px 1px var(--bord-color);
 
 }

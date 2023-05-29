@@ -1,4 +1,5 @@
 
+
 header{
     margin: 0 0;
     background-color: black;
@@ -7,57 +8,54 @@ header{
     padding: 10px;
 }
 main{
+    
     margin: 30px;
 }
 
-.container{
+.box-conatiner{
     width: auto;
+    
     display: grid;
    grid-template-columns: 1fr 1fr 1fr;
+   
     row-gap: 40px;
     column-gap: 40px;
     align-items: center;
     justify-content: center;
 }
 .box-1{
-    width: 300px;
-    height: 300px;
+    height: 350px;
     border: 5px solid pink;
     background-color: pink;
     transition: width 2s, height 2s, transform 2s;
 }
 
 .box-2{
-    width: 300px;
-    height: 300px;
+    height: 350px;
     border: 5px solid red;
     background-color: red;
     transition: width 2s, height 2s, transform 2s;
 }
 .box-3{
-    width: 300px;
-    height: 300px;
+    height: 350px;
     border: 5px solid blue;
     background-color: blue;
     transition: width 2s, height 2s, transform 2s;
 }
 .box-4{
-    width: 300px;
-    height: 300px;
+    height: 350px;
     border: 5px solid green;
     background-color: green;
     transition: width 2s, height 2s, transform 2s;
 }
 .box-5{
-    width: 300px;
-    height: 300px;
+    height: 350px;
     border: 5px solid gray;
     background-color: gray;
     transition: width 2s, height 2s, transform 2s;
 }
 .box-6{
-    width: 300px;
-    height: 300px;
+    height: 350px;
     border: 5px solid burlywood;
     background-color: burlywood;
     transition: width 2s, height 2s, transform 2s;
@@ -99,5 +97,76 @@ main{
     transform: scale3d(2, 1, 1);
   }
 
- 
+/* Text transition*/
+.text-container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+ .text-transform {
+    font-size: 14px;
+    transition: font-size 3s 1s;
+  }
   
+  .text-transform:hover {
+    font-size: 50px;
+  }
+
+  .text-2{
+    transition: margin-right 4s ease-in-out;
+  }
+  .text-2:hover{
+    font-size: 30px;
+  }
+
+  .text-3{
+    transition: all 0.5s ease-out;
+  }
+  .text-3:hover{
+    color: blue;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+  }
+
+  .one {
+    margin: auto;
+    border: solid blue;
+    background-color: blue;
+    transform: translateX(0px) rotate(135deg);
+    width: 140px;
+    height: 140px;
+  }
+  .two {
+    display: block;
+    margin: auto;
+    border: solid red;
+    background-color: red;
+    transform: rotate(135deg) translateX(0px);
+    width: 140px;
+    height: 140px;
+     
+  }
+  .rectangle-box{
+    width: fit-content;
+    transition: width 2s, height 2s, transform 2s;
+    position: relative;
+    left: 50%;
+    margin-left: -50px;
+    
+  }
+  .rectangle-box:hover{
+    transform: rotate(180deg);
+  }
+  .img-box{
+    margin-top: 100px;
+   
+  }
+  .img-box img{
+    transition: 1s ease;
+  }
+  .img-box img:hover{
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.6);
+    transition: .5s ease;
+    }

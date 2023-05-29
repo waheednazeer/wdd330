@@ -26,7 +26,7 @@ export function countryCardTemplate() {
 }
 export function countryTemplate(countryData){
 const countryCard= `
-<h4>Country Demographic Data</h4>
+<h3>Country Demographic Data</h3>
     <p>
     Official Name: ${countryData[0]} <br>
     Alpha-2 Code: ${countryData[2]} </br>
@@ -45,7 +45,7 @@ document.querySelector('.country-card').innerHTML=countryCard;
 }
 export function internationalCardTemplate(intData){
     const intCard= `
-    <h4>Country Interntaional Data</h4>
+    <h3>Country Interntaional Data</h3>
         <p>Telephone Dialing Code: ${intData[0]}</p>
         <p>
         
@@ -85,7 +85,7 @@ export function internationalCardTemplate(intData){
     export function worldBankDataTemplate(wb) {
 
         const wbank= `
-        <h4>Country World Bank Data</h4>
+        <h3>Country World Bank Data</h3>
         <p>GDP: ${wb[0]}$ Billion <br>
         Education Expense % of GDP: ${wb[2]}% <br>
         Inflation: ${wb[1]}% </p>
