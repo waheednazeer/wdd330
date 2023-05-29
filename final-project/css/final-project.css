@@ -271,8 +271,8 @@ footer {
 }
 #search{
   margin-left: 20px;
-  margin-right: 10px;
-  width: 285px;
+  margin-right: 0;
+  width: 266px;
 }
 .flag{
   width: 87%;
@@ -281,6 +281,9 @@ footer {
   font-size: 25px;
 }
 .input-btn label{
+  margin-left: 20px;
+}
+#btn{
   margin-left: 20px;
 }
   
