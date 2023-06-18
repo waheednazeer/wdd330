@@ -4,7 +4,7 @@
 //onst wbPopGrowth='http://api.worldbank.org/v2/country/indicator/SP.POP.GROW?date=2021&per_page=266&format=json';
 //const inflation='http://api.worldbank.org/v2/country/indicator/FP.CPI.TOTL.ZG?date=2021&per_page=266&format=json';
 //inflation
-
+// https://raw.githubusercontent.com/alissoninacio1/countries-api-project/main/restcountries.json
 let newApi="/myjson/json/newAPI.json";
 let jsonFile="/json/countryfactsApi.json"
 let wbgdp="/myjson/json/wbApi.json";

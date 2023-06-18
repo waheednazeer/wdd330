@@ -4,6 +4,7 @@ import { retrieve, help } from "./eventsHandlers.mjs";
 
 
 let wbApi="../final-project/json/wbApi.json"; // I have compiled more than 8 world bank API to get data from one API store in my pc.
+/*
 const url = 'https://country-facts.p.rapidapi.com/all';
 const options = {
 	method: 'GET',
@@ -11,9 +12,9 @@ const options = {
 		'X-RapidAPI-Key': 'e043c650acmsh63deaedd48e9328p1a92efjsnf43078bac6db',
 		'X-RapidAPI-Host': 'country-facts.p.rapidapi.com'
 	}
-};
+}; */ 
 
-
+const url ="../../final-project/json/countryfactsApi.json"
 
 
 
