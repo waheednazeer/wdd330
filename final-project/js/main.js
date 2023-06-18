@@ -14,7 +14,7 @@ const options = {
 	}
 }; */ 
 
-const url ="../../final-project/json/countryfactsApi.json"
+const url ="../final-project/json/countryfactsApi.json"
 
 
 
