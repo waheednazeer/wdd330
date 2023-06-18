@@ -10,9 +10,9 @@ export async function fetchWorldBankApi(api, key) {
     }
     
 }
-export async function fetchApi(url, options, key){
+export async function fetchApi(url, key){
     try {
-        const response = await fetch(url, options);
+        const response = await fetch(url);
         const data = await response.json();
         setToLs(key, data);
         } catch (error) {

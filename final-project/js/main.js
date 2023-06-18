@@ -36,7 +36,7 @@ if (lsWbApi == null) {
 let lsApi=getFromLs('apiKey');
 if (lsApi == null) {
     console.log('First Api Fetch!!!');
-    fetchApi(url, options, 'apiKey');
+    fetchApi(url, 'apiKey');
 }
 
 
